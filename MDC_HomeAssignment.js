@@ -14,10 +14,11 @@ configservice.getComplianceDetailsByResource(params, function (err, data) {
     else result = data.EvaluationResults;  // successful response
 });
 
-
-result.map((item) => {
-    if (item.ComplianceType === "COMPLIANT") 
-        item.status = 'healthy';    
-    else
-        item.status = 'not healthy';
-});
+if (result) {
+    result.map((item) => {
+        if (item.ComplianceType === "COMPLIANT")
+            item.status = 'healthy';
+        else
+            item.status = 'not healthy';
+    });
+}
