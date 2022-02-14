@@ -1,0 +1,19 @@
+Questions 1:
+    AWS::SSM::AssociationCompliance
+
+Questions 2:
+    getComplianceDetailsByResource (API)
+    their input :
+        ResourceId: 'ResourceId'
+        ResourceType: 'AWS::SSM::AssociationCompliance'
+        ComplianceTypes:  COMPLIANT | NON_COMPLIANT
+
+    relevant attributes :
+        EvaluationResults.ComplianceType
+
+
+Questions 3:
+    if (EvaluationResults.ComplianceType === "COMPLIANT") 
+        item.status = 'healthy';    
+    else
+        item.status = 'not healthy';
